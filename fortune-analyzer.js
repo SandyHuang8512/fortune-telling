@@ -221,28 +221,55 @@ const FortuneAnalyzer = (function () {
             let fortune = '';
             let caution = '';
 
-            // Determine monthly fortune rating
+            // Detailed advice parts
+            let workAdvice = '';
+            let healthAdvice = '';
+            let pettyAdvice = '';
+
+            // Determine monthly fortune rating and detailed advice
             if (isSupporting(monthElement, dayElement)) {
                 rating = '旺';
                 fortune = '運勢上揚，諸事順利';
-                caution = '把握機會，積極進取';
+
+                workAdvice = '【工作】貴人相助，工作進展順利，適合推動新計劃或爭取表現機會。';
+                healthAdvice = '【健康】精力充沛，但需注意作息規律，避免因過度興奮而失眠。';
+                pettyAdvice = '【小人】人緣佳，小人退散，適合拓展人脈，與同事建立良好關係。';
+
             } else if (isControlling(monthElement, dayElement)) {
                 rating = '弱';
                 fortune = '運勢波折，謹慎為上';
-                caution = '低調行事，避免衝突';
+
+                workAdvice = '【工作】壓力較大，易受上司責難或任務繁重。建議低調行事，細心處理細節。';
+                healthAdvice = '【健康】抵抗力弱，易感冒或腸胃不適。注意飲食衛生，多休息。';
+                pettyAdvice = '【小人】易犯小人，職場上恐有口舌是非。建議少說話多做事，避免捲入紛爭。';
+
             } else if (monthElement === dayElement) {
                 rating = '平';
                 fortune = '運勢平穩，穩紮穩打';
-                caution = '保持現狀，耐心等待';
+
+                workAdvice = '【工作】平穩無波，適合鞏固既有成果。不宜有大變動，按部就班即可。';
+                healthAdvice = '【健康】身體狀況平穩，適合進行溫和的運動，如散步或瑜伽。';
+                pettyAdvice = '【小人】人際關係平淡，無太大利益衝突。保持禮貌距離即可。';
+
             } else if (isControlled(monthElement, dayElement)) {
                 rating = '中';
                 fortune = '運勢主動，可有作為';
-                caution = '適度進取，注意分寸';
+
+                workAdvice = '【工作】掌控力強，適合帶領團隊或獨立作業。但需注意不要過於強勢。';
+                healthAdvice = '【健康】火氣較旺，易急躁。注意心血管保養，保持心情平和。';
+                pettyAdvice = '【小人】競爭激烈，雖能壓制對手，但也要留有餘地，以免樹敵。';
+
             } else {
                 rating = '平';
                 fortune = '運勢平和，按部就班';
-                caution = '維持穩定，不宜冒進';
+
+                workAdvice = '【工作】平淡期，無大起大落。適合進修學習，充實自己。';
+                healthAdvice = '【健康】注意季節交替的身體變化，適時增減衣物。';
+                pettyAdvice = '【小人】君子之交淡如水，與人相處宜真誠，避免過多算計。';
             }
+
+            // Combine advice into a single formatted string (using <br> for HTML display)
+            caution = `${workAdvice}<br>${healthAdvice}<br>${pettyAdvice}`;
 
             return {
                 month: index + 1,

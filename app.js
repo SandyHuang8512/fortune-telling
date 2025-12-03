@@ -203,7 +203,7 @@
 
             // Caution
             const tdCaution = document.createElement('td');
-            tdCaution.textContent = month.caution;
+            tdCaution.innerHTML = month.caution;
             tr.appendChild(tdCaution);
 
             tbody.appendChild(tr);

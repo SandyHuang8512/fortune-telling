@@ -582,6 +582,7 @@ body {
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
     color: var(--text-primary);
     font-size: 0.9rem;
+    vertical-align: top;
 }
 
 .monthly-table tbody tr {
@@ -738,4 +739,11 @@ body {
     .detailed-yearly-analysis {
         grid-template-columns: 1fr;
     }
+}
+
+/* Monthly Table Detailed Styles */
+.monthly-table td:last-child {
+    text-align: left;
+    min-width: 300px;
+    line-height: 1.6;
 }
