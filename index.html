@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="專業八字算命網站 - 直接輸入八字四柱，獲得精準命理分析與流年運勢預測">
+    <meta name="keywords" content="八字算命,生辰八字,命理分析,流年運勢,天干地支">
+    <title>八字算命 - 專業命理分析</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">☯</span>
+                <h1>八字命理</h1>
+            </div>
+            <p class="subtitle">探索命運軌跡 · 洞悉人生玄機</p>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section" id="inputSection">
+            <div class="card input-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    輸入八字四柱
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <form id="baziForm" class="bazi-form">
+                    <div class="pillar-inputs">
+                        <!-- Year Pillar -->
+                        <div class="pillar-input-group">
+                            <label class="pillar-label">年柱</label>
+                            <div class="ganzi-selects">
+                                <select id="yearStemInput" required>
+                                    <option value="">天干</option>
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                                <select id="yearBranchInput" required>
+                                    <option value="">地支</option>
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Month Pillar -->
+                        <div class="pillar-input-group">
+                            <label class="pillar-label">月柱</label>
+                            <div class="ganzi-selects">
+                                <select id="monthStemInput" required>
+                                    <option value="">天干</option>
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                                <select id="monthBranchInput" required>
+                                    <option value="">地支</option>
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Day Pillar -->
+                        <div class="pillar-input-group">
+                            <label class="pillar-label">日柱</label>
+                            <div class="ganzi-selects">
+                                <select id="dayStemInput" required>
+                                    <option value="">天干</option>
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                                <select id="dayBranchInput" required>
+                                    <option value="">地支</option>
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Hour Pillar -->
+                        <div class="pillar-input-group">
+                            <label class="pillar-label">時柱</label>
+                            <div class="ganzi-selects">
+                                <select id="hourStemInput" required>
+                                    <option value="">天干</option>
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                                <select id="hourBranchInput" required>
+                                    <option value="">地支</option>
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">開始算命</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <!-- BaZi Display -->
+            <div class="card bazi-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    您的生辰八字
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <div class="bazi-pillars" id="baziPillars">
+                    <div class="pillar">
+                        <div class="pillar-label">年柱</div>
+                        <div class="pillar-content">
+                            <div class="stem" id="yearStem">甲</div>
+                            <div class="branch" id="yearBranch">子</div>
+                        </div>
+                        <div class="pillar-element" id="yearElement">木</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-label">月柱</div>
+                        <div class="pillar-content">
+                            <div class="stem" id="monthStem">乙</div>
+                            <div class="branch" id="monthBranch">丑</div>
+                        </div>
+                        <div class="pillar-element" id="monthElement">土</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-label">日柱</div>
+                        <div class="pillar-content">
+                            <div class="stem" id="dayStem">丙</div>
+                            <div class="branch" id="dayBranch">寅</div>
+                        </div>
+                        <div class="pillar-element" id="dayElement">火</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-label">時柱</div>
+                        <div class="pillar-content">
+                            <div class="stem" id="hourStem">丁</div>
+                            <div class="branch" id="hourBranch">卯</div>
+                        </div>
+                        <div class="pillar-element" id="hourElement">木</div>
+                    </div>
+                </div>
+
+                <div class="elements-summary" id="elementsSummary">
+                    <div class="element-item">
+                        <span class="element-name wood">木</span>
+                        <span class="element-count" id="woodCount">2</span>
+                    </div>
+                    <div class="element-item">
+                        <span class="element-name fire">火</span>
+                        <span class="element-count" id="fireCount">1</span>
+                    </div>
+                    <div class="element-item">
+                        <span class="element-name earth">土</span>
+                        <span class="element-count" id="earthCount">1</span>
+                    </div>
+                    <div class="element-item">
+                        <span class="element-name metal">金</span>
+                        <span class="element-count" id="metalCount">0</span>
+                    </div>
+                    <div class="element-item">
+                        <span class="element-name water">水</span>
+                        <span class="element-count" id="waterCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fortune Analysis -->
+            <div class="card analysis-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    命理分析
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <div class="analysis-content" id="analysisContent">
+                    <div class="analysis-section">
+                        <h3 class="analysis-subtitle">性格特質</h3>
+                        <p class="analysis-text" id="personalityAnalysis"></p>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h3 class="analysis-subtitle">事業運勢</h3>
+                        <p class="analysis-text" id="careerAnalysis"></p>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h3 class="analysis-subtitle">財富運勢</h3>
+                        <p class="analysis-text" id="wealthAnalysis"></p>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h3 class="analysis-subtitle">感情運勢</h3>
+                        <p class="analysis-text" id="loveAnalysis"></p>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h3 class="analysis-subtitle">健康運勢</h3>
+                        <p class="analysis-text" id="healthAnalysis"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yearly Fortune -->
+            <div class="card yearly-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    流年運勢
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <div class="yearly-content">
+                    <div class="current-year" id="currentYear">
+                        <span class="year-label">當前流年</span>
+                        <span class="year-value">2025 乙巳年</span>
+                    </div>
+
+                    <div class="yearly-analysis" id="yearlyAnalysis">
+                        <p class="analysis-text" id="yearlyGeneral"></p>
+
+                        <div class="detailed-yearly-analysis">
+                            <div class="analysis-subsection">
+                                <h4 class="subsection-title">工作運勢</h4>
+                                <p class="analysis-text" id="yearlyWork"></p>
+                            </div>
+                            <div class="analysis-subsection">
+                                <h4 class="subsection-title">健康運勢</h4>
+                                <p class="analysis-text" id="yearlyHealth"></p>
+                            </div>
+                            <div class="analysis-subsection">
+                                <h4 class="subsection-title">人際運勢 (小人)</h4>
+                                <p class="analysis-text" id="yearlyPettyPeople"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="suggestions" id="suggestions">
+                        <h3 class="analysis-subtitle">開運建議</h3>
+                        <ul class="suggestions-list" id="suggestionsList">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Fortune 2025 -->
+            <div class="card monthly-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    2025年每月運勢
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <div class="monthly-table-container">
+                    <table class="monthly-table" id="monthly2025Table">
+                        <thead>
+                            <tr>
+                                <th>月份</th>
+                                <th>月柱</th>
+                                <th>五行</th>
+                                <th>運勢</th>
+                                <th>注意事項</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monthly2025Body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Monthly Fortune 2026 -->
+            <div class="card monthly-card">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    2026年每月運勢
+                    <span class="title-decoration">✦</span>
+                </h2>
+
+                <div class="monthly-table-container">
+                    <table class="monthly-table" id="monthly2026Table">
+                        <thead>
+                            <tr>
+                                <th>月份</th>
+                                <th>月柱</th>
+                                <th>五行</th>
+                                <th>運勢</th>
+                                <th>注意事項</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monthly2026Body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="reset-btn" id="resetBtn">
+                <span class="btn-icon">←</span>
+                <span class="btn-text">重新算命</span>
+            </button>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="bazi-calculator.js"></script>
+    <script src="fortune-analyzer.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
